@@ -18,9 +18,12 @@ Raw API responses are returned without modification.
 
 ### Installation
 
+```bash 
+git clone https://github.com/mekhronabr/naver-smartstore-scraper
+cd naver-smartstore-scraper
 npm install
 npx playwright install chromium
-
+```
 
 
 ## Environment
@@ -34,6 +37,8 @@ HEADLESS=false
 JOB_TTL_MS=3600000
 PROXIES=http://user:pass@ip:port,http://user:pass@ip:port
 ```
+If no proxies are available just leave it empty
+
 ### Variables
 - PORT – server port
 - WORKERS – number of parallel browser workers
@@ -55,6 +60,10 @@ Start Scraping
 ```bash
 GET /naver?productUrl=<url>
 ```
+Example
+```bash 
+curl "http://localhost:3000/naver?productUrl=https://smartstore.naver.com/nosugar_off/products/6695729103
+```
 Response:
 ```bash
 {
@@ -68,6 +77,12 @@ Response:
 ```bash
 GET /naver/jobs/:jobId
 ```
+
+Example
+```bash
+curl "http://localhost:3000/naver/jobs/<jobId>"
+```
+
 Possible statuses:
 - queued
 - running
