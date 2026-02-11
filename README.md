@@ -71,6 +71,12 @@ Response:
 }
 ```
 
+### Important
+
+If a captcha or verification page appears in the opened browser window, it must be solved manually.
+
+After solving the captcha, refresh the product page once in the browser window.
+Then continue polling the job status endpoint until the job reaches done or error.
 
 ## Check Job Status
 
